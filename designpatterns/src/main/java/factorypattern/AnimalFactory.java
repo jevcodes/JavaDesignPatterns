@@ -9,7 +9,17 @@ package factorypattern;
  */
 public class AnimalFactory {
 
-	public static Animal getAnimal(String name, String animal) {
+	private static AnimalFactory af = new AnimalFactory();
+	
+	private AnimalFactory() {
+		
+	}
+	
+	public static AnimalFactory getInstance() {
+		return af;
+	}
+	
+	public  Animal getAnimal(String name, String animal) {
 		if("Cat".equalsIgnoreCase(animal)) {
 			return new Cat(name);
 		}

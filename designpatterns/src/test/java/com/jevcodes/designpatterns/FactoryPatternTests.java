@@ -23,9 +23,9 @@ public class FactoryPatternTests {
 	@Before
 	public  void setup() {
 		System.out.println("Setup starting...");
-		 grumpyCat = AnimalFactory.getAnimal("Grumpy Cat","Cat");
-		 clifford = AnimalFactory.getAnimal("Clifford","Dog");
-		 simba = AnimalFactory.getAnimal("Simba","Lion");
+		 grumpyCat = AnimalFactory.getInstance().getAnimal("Grumpy Cat","Cat");
+		 clifford = AnimalFactory.getInstance().getAnimal("Clifford","Dog");
+		 simba = AnimalFactory.getInstance().getAnimal("Simba","Lion");
 	}
 	
 	/*@Test
@@ -73,7 +73,7 @@ public class FactoryPatternTests {
 	
 	@Test
 	public void testAnimalSpeak() {
-		Animal mufasa = AnimalFactory.getAnimal("Mufasa", "Lion");
+		Animal mufasa = AnimalFactory.getInstance().getAnimal("Mufasa", "Lion");
 		
 		System.out.println(mufasa.speak());
 		
@@ -84,7 +84,7 @@ public class FactoryPatternTests {
 		String cliffordSpeech = "My name is Clifford. I am a Dog. Woof!";
 		 
 		assertEquals(cliffordSpeech, clifford.speak());
-		
+		 	
 		String grumpyCatSpeech = "My name is Grumpy Cat. I am a Cat. Meow!";
 	
 		assertEquals(grumpyCatSpeech, grumpyCat.speak());
